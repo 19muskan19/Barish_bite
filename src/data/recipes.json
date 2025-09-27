@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Masala Chai",
+    "ingredients": ["Tea leaves", "Milk", "Ginger", "Cardamom", "Cloves", "Sugar", "Water"],
+    "steps": ["Boil water with ginger, cardamom, and cloves", "Add tea leaves, milk, and sugar", "Simmer for 5 minutes and strain before serving"],
+    "tags": ["chai", "hot", "monsoon", "beverage"],
+    "image":"/chai.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Pakoras (Fritters)",
+    "ingredients": ["Gram flour", "Onion", "Potato", "Spinach", "Spices", "Water", "Oil"],
+    "steps": ["Mix gram flour with spices and water to make batter", "Dip sliced vegetables in batter", "Deep fry until golden and crispy"],
+    "tags": ["snack", "fritters", "monsoon", "crispy"],
+    "image": "/pakoda.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Pav Bhaji",
+    "ingredients": ["Potatoes", "Peas", "Cauliflower", "Butter", "Onions", "Tomatoes", "Pav bhaji masala", "Pav buns"],
+    "steps": ["Boil and mash vegetables", "Cook with butter, onions, tomatoes, and pav bhaji masala", "Serve hot with toasted pav buns"],
+    "tags": ["street food", "spicy", "monsoon", "vegetables"],
+    "image": "/pavbhaji.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Samosa",
+    "ingredients": ["Flour", "Oil", "Potatoes", "Peas", "Spices", "Water", "Oil for frying"],
+    "steps": ["Prepare dough with flour and oil", "Make filling with boiled potatoes, peas, and spices", "Fill, fold into triangles, and deep fry until golden"],
+    "tags": ["snack", "fried", "monsoon", "potato"],
+    "image": "/samosa.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Jalebi",
+    "ingredients": ["Flour", "Yogurt", "Sugar", "Water", "Oil"],
+    "steps": ["Make fermented batter with flour and yogurt", "Pipe into hot oil in spiral shapes", "Fry until crisp and dip in sugar syrup"],
+    "tags": ["sweet", "dessert", "monsoon", "crispy"],
+    "image": "/jalebi.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Medu Vada",
+    "ingredients": ["Urad dal", "Spices", "Oil", "Coconut chutney", "Sambar"],
+    "steps": ["Soak urad dal and grind into thick batter", "Add spices and shape into rings", "Deep fry until golden brown and serve with chutney and sambar"],
+    "tags": ["south indian", "fried", "monsoon", "lentils"],
+    "image": "/mendu_vada.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Aloo Paratha",
+    "ingredients": ["Wheat flour", "Potatoes", "Spices", "Butter", "Pickle", "Curd"],
+    "steps": ["Make dough with wheat flour", "Prepare potato filling with spices", "Roll dough, stuff with filling, cook on tawa with ghee or butter"],
+    "tags": ["north indian", "flatbread", "monsoon", "stuffed"],
+    "image": "/paratha.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Pohe",
+    "ingredients": ["Flattened rice (poha)", "Onions", "Mustard seeds", "Peanuts", "Curry leaves", "Turmeric", "Lemon juice", "Salt", "Oil"],
+    "steps": ["Wash poha and keep aside", "Fry mustard seeds, curry leaves, onions, and peanuts", "Add turmeric, poha, salt, and lemon juice, mix well and serve"],
+    "tags": ["breakfast", "light", "monsoon", "snack"],
+    "image": "/pohe.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Bread Sandwich",
+    "ingredients": ["Bread slices", "Butter", "Chutney", "Cucumber", "Tomato", "Potato"],
+    "steps": ["Butter bread slices", "Spread chutney and layer with vegetables", "Cover with another slice and cut into halves"],
+    "tags": ["quick snack", "vegetarian", "monsoon", "easy"],
+    "image": "/sandwhich.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Chole Bhature",
+    "ingredients": ["Chickpeas", "Onions", "Tomatoes", "Spices", "Flour", "Yogurt", "Oil for frying"],
+    "steps": ["Cook chickpeas with onion, tomato, and spices to make chole", "Prepare dough with flour and yogurt, roll into bhature, deep fry and serve"],
+    "tags": ["north indian", "spicy", "monsoon", "street food"],
+    "image": "/chole_bhature.jpg"
+  }
+]
