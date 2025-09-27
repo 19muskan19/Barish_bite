@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { RecipesContext } from "../context/RecipesContext";
 import RecipeCard from "../components/RecipeCard";
 
 export default function Recipes() {
   const { recipes } = useContext(RecipesContext);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const filtered = recipes.filter(
     r =>
@@ -29,13 +31,12 @@ export default function Recipes() {
     outline: "none",
   };
 
- const gridStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(250px, auto))", // use 'auto' instead of '1fr'
-  gap: "1.5rem",
-  justifyContent: "start", // ensures single card doesn't stretch
-};
-
+  const gridStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, auto))", 
+    gap: "1.5rem",
+    justifyContent: "start",
+  };
 
   const headingStyle = {
     textAlign: "center",
@@ -45,8 +46,23 @@ export default function Recipes() {
     fontSize: "2rem",
   };
 
+  const backButtonStyle = {
+    marginBottom: "1.5rem",
+    padding: "0.5rem 1rem",
+    backgroundColor: "#059669",
+    color: "white",
+    border: "none",
+    borderRadius: "6px",
+    cursor: "pointer",
+  };
+
   return (
     <div style={containerStyle}>
+      {/* Back button */}
+      <button style={backButtonStyle} onClick={() => navigate(-1)}>
+        &larr; Back
+      </button>
+
       <h2 style={headingStyle}>All Recipes</h2>
       <input
         type="text"

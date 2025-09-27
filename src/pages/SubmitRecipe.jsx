@@ -38,10 +38,10 @@ export default function SubmitRecipe() {
   alignItems: "center",
   padding: "3rem",
   minHeight: "80vh",
-  backgroundImage: "url('/logo.jpg')", // path in public folder
-  backgroundSize: "cover",             // cover whole container
-  backgroundPosition: "center",        // center the image
-  backgroundRepeat: "no-repeat",       // don't repeat
+  backgroundImage: "url('/logo.jpg')", 
+  backgroundSize: "cover",             
+  backgroundPosition: "center",        
+  backgroundRepeat: "no-repeat",      
 };
 
 

@@ -58,23 +58,23 @@ export default function RecipeCard({ recipe }) {
              View
           </button>
 
-          {/* Like Icon */}
+       
           <span
             onClick={handleLike}
             style={{
               cursor: "pointer",
               fontSize: "1.2rem",
               transition: "transform 0.2s, color 0.3s",
-              color: liked ? "red" : "white", // white by default
-              textShadow: "0 0 2px rgba(0,0,0,0.7)" // add contrast on white
+              color: liked ? "red" : "white", 
+              textShadow: "0 0 2px rgba(0,0,0,0.7)" 
             }}
             onMouseEnter={e => e.style.transform = "scale(1.2)"}
             onMouseLeave={e => e.style.transform = "scale(1)"}
           >
-            {liked ? "❤️" : "🤍"} {/* filled red if liked, white heart if not */}
+            {liked ? "❤️" : "🤍"} 
           </span>
 
-          {/* Comment Icon */}
+      
           <span
             onClick={handleComment}
             style={{ cursor: "pointer", fontSize: "1.2rem", transition: "transform 0.2s" }}

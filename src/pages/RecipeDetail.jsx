@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { RecipesContext } from "../context/RecipesContext";
 import { AuthContext } from "../context/AuthContext";
 
@@ -7,12 +7,18 @@ export default function RecipeDetail() {
   const { id } = useParams();
   const { recipes } = useContext(RecipesContext);
   const { user } = useContext(AuthContext);
-  const recipe = recipes.find(r => r.id === parseInt(id));
+  const navigate = useNavigate();
 
+  const recipe = recipes.find(r => r.id === parseInt(id));
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
 
-  if (!recipe) return <p style={{ textAlign: "center", marginTop: "2rem" }}>Recipe not found</p>;
+  if (!recipe)
+    return (
+      <p style={{ textAlign: "center", marginTop: "2rem" }}>
+        Recipe not found
+      </p>
+    );
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
@@ -30,15 +36,34 @@ export default function RecipeDetail() {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "flex-start",
         padding: "4rem 1rem",
         backgroundImage: "url('/logo.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         minHeight: "80vh",
+        position: "relative",
       }}
     >
+      {/* Back Button */}
+      <button
+        onClick={() => navigate(-1)}
+        style={{
+          position: "absolute",
+          top: "1rem",
+          left: "1rem",
+          padding: "0.5rem 1rem",
+          backgroundColor: "#059669",
+          color: "#fff",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer",
+        }}
+      >
+        &larr; Back
+      </button>
+
       <div
         style={{
           maxWidth: "700px",
@@ -51,7 +76,9 @@ export default function RecipeDetail() {
           animation: "fadeIn 0.6s ease-in-out",
         }}
       >
-        <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>{recipe.title}</h2>
+        <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>
+          {recipe.title}
+        </h2>
 
         <img
           src={recipe.image}
@@ -69,7 +96,14 @@ export default function RecipeDetail() {
         <h3>Ingredients</h3>
         <ul>
           {recipe.ingredients.map((ing, i) => (
-            <li key={i} style={{ marginBottom: "0.3rem", animation: `fadeIn 0.8s ease-in-out forwards`, animationDelay: `${i * 0.1}s` }}>
+            <li
+              key={i}
+              style={{
+                marginBottom: "0.3rem",
+                animation: `fadeIn 0.8s ease-in-out forwards`,
+                animationDelay: `${i * 0.1}s`,
+              }}
+            >
               {ing}
             </li>
           ))}
@@ -78,7 +112,14 @@ export default function RecipeDetail() {
         <h3>Steps</h3>
         <ol>
           {recipe.steps.map((step, i) => (
-            <li key={i} style={{ marginBottom: "0.3rem", animation: `fadeIn 0.8s ease-in-out forwards`, animationDelay: `${i * 0.1}s` }}>
+            <li
+              key={i}
+              style={{
+                marginBottom: "0.3rem",
+                animation: `fadeIn 0.8s ease-in-out forwards`,
+                animationDelay: `${i * 0.1}s`,
+              }}
+            >
               {step}
             </li>
           ))}
@@ -87,15 +128,29 @@ export default function RecipeDetail() {
         <p style={{ marginTop: "1rem" }}>Tags: {recipe.tags.join(", ")}</p>
 
         {/* Comment Section */}
-        <div style={{ marginTop: "2rem", borderTop: "1px solid #ccc", paddingTop: "1rem" }}>
+        <div
+          style={{
+            marginTop: "2rem",
+            borderTop: "1px solid #ccc",
+            paddingTop: "1rem",
+          }}
+        >
           <h3>Leave a Comment</h3>
-          <form onSubmit={handleCommentSubmit} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+          <form
+            onSubmit={handleCommentSubmit}
+            style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+          >
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               placeholder="Write your comment..."
               rows={3}
-              style={{ padding: "0.75rem", borderRadius: "8px", border: "1px solid #ccc", resize: "none" }}
+              style={{
+                padding: "0.75rem",
+                borderRadius: "8px",
+                border: "1px solid #ccc",
+                resize: "none",
+              }}
             />
             <button
               type="submit"

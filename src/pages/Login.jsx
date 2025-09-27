@@ -25,7 +25,7 @@ export default function Login() {
       formData.username === storedUser.username &&
       formData.password === storedUser.password
     ) {
-      login(storedUser); // Save in context
+      login(storedUser); 
       alert(`Welcome back, ${storedUser.name}!`);
       navigate("/");
     } else {
@@ -100,7 +100,7 @@ export default function Login() {
           </button>
         </form>
 
-        {/* Register Link */}
+     
         <p style={{ marginTop: "1rem", fontSize: "0.9rem" }}>
           Don't have an account?{" "}
           <Link

@@ -14,9 +14,9 @@ export const RecipesProvider = ({ children }) => {
     }
   }, []);
 
-  // Function to add new recipe
+ 
   const addRecipe = (newRecipe) => {
-    setRecipes((prev) => [newRecipe, ...prev]); // Add new recipe at the top
+    setRecipes((prev) => [newRecipe, ...prev]); 
   };
 
   return (

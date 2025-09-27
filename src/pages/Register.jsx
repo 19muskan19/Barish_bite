@@ -16,7 +16,7 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Save credentials to localStorage
+   
     localStorage.setItem(
       "user",
       JSON.stringify({

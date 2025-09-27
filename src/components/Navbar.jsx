@@ -23,7 +23,7 @@ export default function Navbar() {
   const linkButtonStyle = {
     padding: "0.5rem 1rem",
     marginRight: "0.5rem",
-    backgroundColor: "#059669", // emerald green
+    backgroundColor: "#059669", 
     color: "white",
     border: "none",
     borderRadius: "6px",
@@ -34,14 +34,14 @@ export default function Navbar() {
 
   const logoutButtonStyle = {
     ...linkButtonStyle,
-    backgroundColor: "#ef4444", // red for logout
+    backgroundColor: "#ef4444", 
   };
 
   return (
     <header
       style={{
         padding: "1rem",
-        background: "#000", // black background
+        background: "#000",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -49,30 +49,27 @@ export default function Navbar() {
         color: "white",
       }}
     >
-      {/* Logo */}
+      
       <Link to="/" style={{ display: "flex", alignItems: "center" }}>
         <img
           src="/logo.jpg"
-          alt="Monsoon Recipe Hub"
+          alt="Barish Bite"
           style={{ height: "44px", width: "44px", borderRadius: "8px" }}
         />
       </Link>
 
       <nav>
-        {/* About Us - accessible to everyone */}
         <button onClick={() => navigate("/about")} style={linkButtonStyle}>
           About Us
         </button>
-
-        {/* Recipes - protected */}
         <button onClick={() => handleProtectedRoute("/recipes")} style={linkButtonStyle}>
-          Recipes
+          All Recipes
         </button>
 
         {user ? (
           <>
             <button onClick={() => navigate("/submit")} style={linkButtonStyle}>
-              Submit
+              Add New Recipe
             </button>
             <button onClick={handleLogout} style={logoutButtonStyle}>
               Logout
@@ -89,6 +86,23 @@ export default function Navbar() {
           </>
         )}
       </nav>
+
+   
+      <style>
+        {`
+          @media (max-width: 600px) {
+            header button {
+              font-size: 0.7rem !important;
+              padding: 0.3rem 0.6rem !important;
+            }
+
+            header img {
+              height: 36px !important;
+              width: 36px !important;
+            }
+          }
+        `}
+      </style>
     </header>
   );
 }
