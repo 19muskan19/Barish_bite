@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 export default function AboutUs() {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleExplore = () => {
+    if (!user) {
+      alert("Please login or register first to access recipes!");
+      navigate("/login");
+    } else {
+      navigate("/recipes");
+    }
+  };
+
   return (
     <div
       style={{
@@ -35,31 +49,26 @@ export default function AboutUs() {
           We are passionate about sharing delightful rainy-day snacks, aromatic chai, and 
           spicy comfort dishes, contributed by our vibrant community.
         </p>
-
         <p style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#374151", marginTop: "1rem" }}>
           Our mission is to bring people together through the joy of cooking and sharing. 
           Each recipe you find here tells a story — whether it's a secret family recipe, 
           a traditional dish from your hometown, or a creative twist you’ve discovered.
         </p>
-
         <p style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#374151" }}>
           Here at <strong>Barish Bite</strong>, we encourage everyone to explore, experiment, 
           and engage with the recipes. You can like your favorite recipes, leave thoughtful 
           comments, and even submit your own creations to inspire others.
         </p>
-
         <p style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#374151" }}>
           Our community is built on sharing, learning, and celebrating flavors. We believe 
           that cooking is not just about food, but about experiences and memories that we 
           create and share together.
         </p>
-
         <ul style={{ textAlign: "left", margin: "1rem 0", color: "#374151", fontSize: "1rem", lineHeight: "1.6" }}>
           <li>❤️ Like recipes that you love</li>
           <li>💬 Comment on recipes and share your tips</li>
           <li>📝 Submit your own recipes for the community</li>
         </ul>
-
         <p style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#374151", marginTop: "1rem" }}>
           Whether you are a seasoned cook or just starting out, <strong>Barish Bite</strong> 
           is a place to discover, connect, and celebrate the magic of monsoon cooking. 
@@ -68,7 +77,7 @@ export default function AboutUs() {
         </p>
 
         <button
-          onClick={() => window.location.href = "/recipes"}
+          onClick={handleExplore}
           style={{
             marginTop: "1.5rem",
             padding: "0.75rem 1.5rem",
